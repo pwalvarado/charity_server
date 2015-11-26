@@ -1,4 +1,8 @@
 RSpec.describe User do
+  describe "Relationships" do
+    it {is_expected.to have_many :auction_admins }
+  end
+
   describe "Validations" do
     %w(name mobile_phone_number email_address physical_address).each do |attr|
       it { is_expected.to have_attribute attr }
