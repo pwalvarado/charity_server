@@ -8,8 +8,8 @@ RSpec.describe Donation do
       donor_id
       redemption_window_starts_at
       redemption_window_ends_at
-      estimated_value_dollars
-      minimum_bid_dollars
+      estimated_value_amount
+      minimum_bid_amount
       display_description
       admin_follow_up_needed
       fulfillment_type
@@ -54,30 +54,30 @@ RSpec.describe Donation do
       expect(subject.errors[:redemption_window_ends_at]).to be_empty
     end
 
-    it "validates estimated_value_dollars is either nil or greater than or equel to 0" do
-      subject.estimated_value_dollars = nil
+    it "validates estimated_value_amount is either nil or greater than or equel to 0" do
+      subject.estimated_value_amount = nil
       subject.valid?
-      expect(subject.errors[:estimated_value_dollars]).to be_empty
-      subject.estimated_value_dollars = 0
+      expect(subject.errors[:estimated_value_amount]).to be_empty
+      subject.estimated_value_amount = 0
       subject.valid?
-      expect(subject.errors[:estimated_value_dollars]).to be_empty
-      subject.estimated_value_dollars = -10
+      expect(subject.errors[:estimated_value_amount]).to be_empty
+      subject.estimated_value_amount = -10
       subject.valid?
-      expect(subject.errors[:estimated_value_dollars]).to include
+      expect(subject.errors[:estimated_value_amount]).to include
         "must be greater than or equal to 0"
     end
 
-    it "validates that minimum_bid_dollars is either nil or greater than 0" do
-      subject.minimum_bid_dollars = nil
+    it "validates that minimum_bid_amount is either nil or greater than 0" do
+      subject.minimum_bid_amount = nil
       subject.valid?
-      expect(subject.errors[:minimum_bid_dollars]).to be_empty
-      subject.minimum_bid_dollars = 0
+      expect(subject.errors[:minimum_bid_amount]).to be_empty
+      subject.minimum_bid_amount = 0
       subject.valid?
-      expect(subject.errors[:minimum_bid_dollars]).to include
+      expect(subject.errors[:minimum_bid_amount]).to include
         "must be greater than 0"
-      subject.minimum_bid_dollars = 1
+      subject.minimum_bid_amount = 1
       subject.valid?
-      expect(subject.errors[:minimum_bid_dollars]).to be_empty
+      expect(subject.errors[:minimum_bid_amount]).to be_empty
     end
 
     it "defaults the admin_follow_up_needed to false" do

@@ -9,8 +9,8 @@ class CreateDonations < ActiveRecord::Migration
       t.belongs_to :donor, index: true, null: false
       t.datetime :redemption_window_starts_at
       t.datetime :redemption_window_ends_at
-      t.integer :estimated_value_dollars
-      t.integer :minimum_bid_dollars
+      t.integer :estimated_value_amount
+      t.integer :minimum_bid_amount
       t.text :display_description
       t.boolean :admin_follow_up_needed
       t.integer :fulfillment_type

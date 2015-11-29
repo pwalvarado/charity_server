@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151129153605) do
+ActiveRecord::Schema.define(version: 20151129195905) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -62,8 +62,8 @@ ActiveRecord::Schema.define(version: 20151129153605) do
     t.integer  "donor_id",                                    null: false
     t.datetime "redemption_window_starts_at"
     t.datetime "redemption_window_ends_at"
-    t.integer  "estimated_value_dollars"
-    t.integer  "minimum_bid_dollars"
+    t.integer  "estimated_value_amount"
+    t.integer  "minimum_bid_amount"
     t.text     "display_description"
     t.boolean  "admin_follow_up_needed",      default: false
     t.integer  "fulfillment_type"
