@@ -19,4 +19,8 @@ RSpec.describe User do
       end
     end
   end
+
+  describe "Relationships" do
+    it { is_expected.to have_many :donations }
+  end
 end
