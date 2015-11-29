@@ -15,5 +15,14 @@ RSpec.describe Bid do
     %w(amount_dolars quantity placed_at donation bidder).each do |attr|
       it { is_expected.to validate_presence_of attr }
     end
+
+    it { is_expected.to validate_numericality_of(:amount_dolars).is_greater_than(0) }
+
+    it "validates that the quantity is between 1 and donation's quantity" do
+      subject.donation = Donation.new(quantity: 2)
+      subject.quantity = 0
+      subject.valid?
+      expect(subject.errors[:quantity]).to include "must be greater than or equal to 1 and less than or equal to 2"
+    end
   end
 end
