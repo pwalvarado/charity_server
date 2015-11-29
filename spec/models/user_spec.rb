@@ -22,7 +22,5 @@ RSpec.describe User do
 
   describe "Relationships" do
     it { is_expected.to have_many :donations }
-
-    it { is_expected.to have_many :bids }
   end
 end

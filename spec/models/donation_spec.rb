@@ -26,8 +26,6 @@ RSpec.describe Donation do
 
       it { is_expected.to validate_presence_of attr }
     end
-
-    it { is_expected.to have_many :bids}
   end
 
   describe "Validations" do

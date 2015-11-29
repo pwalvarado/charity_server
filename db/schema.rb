@@ -45,19 +45,6 @@ ActiveRecord::Schema.define(version: 20151129153605) do
 
   add_index "bid_types", ["name"], name: "index_bid_types_on_name", unique: true, using: :btree
 
-  create_table "bids", force: :cascade do |t|
-    t.integer  "donation_id",   null: false
-    t.integer  "bidder_id",     null: false
-    t.integer  "amount_dolars", null: false
-    t.integer  "quantity",      null: false
-    t.datetime "placed_at",     null: false
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
-  end
-
-  add_index "bids", ["bidder_id"], name: "index_bids_on_bidder_id", using: :btree
-  add_index "bids", ["donation_id"], name: "index_bids_on_donation_id", using: :btree
-
   create_table "donation_categories", force: :cascade do |t|
     t.string   "name",       null: false
     t.datetime "created_at", null: false
