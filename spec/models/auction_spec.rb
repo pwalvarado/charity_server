@@ -12,6 +12,7 @@ RSpec.describe Auction do
     it { is_expected.to have_many :auction_admins }
     #it { is_expected.to have_many(:admins).trough(:auction_admins) }
     it { is_expected.to have_many :donations }
+    it { is_expected.to belong_to :organization }
   end
 
   describe "Validations" do
@@ -41,5 +42,7 @@ RSpec.describe Auction do
       subject.valid?
       expect(subject.errors[:time_zone_id]).to be_empty
     end
+
+    it { is_expected.to validate_presence_of :organization }
   end
 end

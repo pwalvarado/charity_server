@@ -4,12 +4,16 @@ class Auction < ActiveRecord::Base
 
   has_many :donations
 
+  belongs_to :organization
+
   validate :_ends_at_after_starts_at
 
   validate :_starts_at_after_donation_window_ends_at
 
   validates :time_zone_id, inclusion: { in: ActiveSupport::TimeZone::MAPPING.values,
     message: "must be in list" }, allow_blank: :true
+
+  validates :organization, presence: true
 
   def _ends_at_after_starts_at
     return unless starts_at && ends_at
