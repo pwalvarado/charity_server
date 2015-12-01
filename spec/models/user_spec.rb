@@ -1,6 +1,8 @@
 RSpec.describe User do
   describe "Relationships" do
     it {is_expected.to have_many :auction_admins }
+
+    it {is_expected.to have_many :memberships }
   end
 
   describe "Validations" do

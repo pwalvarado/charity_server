@@ -9,5 +9,7 @@ RSpec.describe Organization do
 
   describe "Relationships" do
     it { is_expected.to have_many :auctions }
+
+    it { is_expected.to have_many :memberships }
   end
 end
