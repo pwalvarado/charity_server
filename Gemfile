@@ -5,6 +5,8 @@ gem 'pg'
 gem 'bcrypt', '~> 3.1.7'
 gem 'puma'
 gem 'doorkeeper'
+gem 'rspec_api_documentation'
+gem 'apitome'
 
 group :development, :test do
     gem 'byebug'
