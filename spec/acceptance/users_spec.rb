@@ -106,4 +106,19 @@ RSpec.resource "Users" do
       expect(user["data"]["attributes"]["name"]).to eq public_send("name")
     end
   end
+
+  get "/v1/users" do
+    before do
+      2.times do
+        FactoryGirl.create(:user)
+      end
+    end
+
+    example_request "GET /v1/users" do
+      expect(status).to eq 200
+      users = JSON.parse(response_body)
+      expect(users["data"].size).to eq 2
+    end
+  end
+
 end
