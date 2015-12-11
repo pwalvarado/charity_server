@@ -121,4 +121,18 @@ RSpec.resource "Users" do
     end
   end
 
+  # delete "/v1/users/:user_id" do
+  #   let! :persisted_user do
+  #     FactoryGirl.create(:user)
+  #   end
+
+  #   let "user_id" do
+  #     persisted_user.id.to_s
+  #   end
+
+  #   example_request "DELETE /v1/users" do
+  #     expect(status).to eq 20
+  #   end
+  # end
+
 end

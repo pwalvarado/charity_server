@@ -14,6 +14,11 @@
           "groups": "all"
         },
         {
+          "description": "GET /v1/users",
+          "link": "users/get_v1users.json",
+          "groups": "all"
+        },
+        {
           "description": "POST /v1/users",
           "link": "users/post_v1users.json",
           "groups": "all"

@@ -13,7 +13,7 @@
   "requests": [
     {
       "request_method": "GET",
-      "request_path": "/v1/users/76",
+      "request_path": "/v1/users/10",
       "request_body": null,
       "request_headers": {
         "Content-Type": "application/vnd.api+json"
@@ -23,7 +23,7 @@
       "request_content_type": "application/vnd.api+json",
       "response_status": 200,
       "response_status_text": "OK",
-      "response_body": "{\"data\":{\"id\":\"76\",\"type\":\"users\",\"links\":{\"self\":\"http://example.org/v1/users/76\"},\"attributes\":{\"name\":\"MyString\",\"mobile-phone-number\":\"MyString\",\"email-address\":\"MyString\",\"physical-address\":\"MyString\"}}}",
+      "response_body": "{\"data\":{\"id\":\"10\",\"type\":\"users\",\"links\":{\"self\":\"http://example.org/v1/users/10\"},\"attributes\":{\"name\":\"Pedro Alvarado\",\"mobile-phone-number\":\"+18885551211\",\"email-address\":\"test-1@test.com\",\"physical-address\":\"123 Main St\\nAnytown, NY 12121 USA\"}}}",
       "response_headers": {
         "Content-Type": "application/vnd.api+json"
       },

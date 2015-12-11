@@ -52,8 +52,8 @@
   "requests": [
     {
       "request_method": "PATCH",
-      "request_path": "/v1/users/77",
-      "request_body": "{\"data\":{\"type\":\"users\",\"attributes\":{\"name\":\"Marta Urrego\"},\"id\":\"77\"}}",
+      "request_path": "/v1/users/11",
+      "request_body": "{\"data\":{\"type\":\"users\",\"attributes\":{\"name\":\"Marta Urrego\"},\"id\":\"11\"}}",
       "request_headers": {
         "Content-Type": "application/vnd.api+json"
       },
@@ -62,7 +62,7 @@
       "request_content_type": "application/vnd.api+json",
       "response_status": 200,
       "response_status_text": "OK",
-      "response_body": "{\"data\":{\"id\":\"77\",\"type\":\"users\",\"links\":{\"self\":\"http://example.org/v1/users/77\"},\"attributes\":{\"name\":\"Marta Urrego\",\"mobile-phone-number\":\"MyString\",\"email-address\":\"MyString\",\"physical-address\":\"MyString\"}}}",
+      "response_body": "{\"data\":{\"id\":\"11\",\"type\":\"users\",\"links\":{\"self\":\"http://example.org/v1/users/11\"},\"attributes\":{\"name\":\"Marta Urrego\",\"mobile-phone-number\":\"+18885551212\",\"email-address\":\"test-2@test.com\",\"physical-address\":\"123 Main St\\nAnytown, NY 12121 USA\"}}}",
       "response_headers": {
         "Content-Type": "application/vnd.api+json"
       },

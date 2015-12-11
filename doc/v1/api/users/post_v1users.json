@@ -57,7 +57,7 @@
       "request_content_type": "application/vnd.api+json",
       "response_status": 201,
       "response_status_text": "Created",
-      "response_body": "{\"data\":{\"id\":\"78\",\"type\":\"users\",\"links\":{\"self\":\"http://example.org/v1/users/78\"},\"attributes\":{\"name\":\"Pedro Alvarado\",\"mobile-phone-number\":\"+18885551212\",\"email-address\":\"barelyknown@icloud.com\",\"physical-address\":\"123 Main St\\nAnytown, NY 12312 USA\"}}}",
+      "response_body": "{\"data\":{\"id\":\"14\",\"type\":\"users\",\"links\":{\"self\":\"http://example.org/v1/users/14\"},\"attributes\":{\"name\":\"Pedro Alvarado\",\"mobile-phone-number\":\"+18885551212\",\"email-address\":\"barelyknown@icloud.com\",\"physical-address\":\"123 Main St\\nAnytown, NY 12312 USA\"}}}",
       "response_headers": {
         "Content-Type": "application/vnd.api+json"
       },
