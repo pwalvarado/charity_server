@@ -53,6 +53,7 @@ RSpec.resource "Users" do
     end
 
     example_request "POST /v1/users" do
+      #puts response_body
       expect(status).to eq 201
       user = JSON.parse(response_body)
       expect(user["data"]["attributes"]["email-address"]).to eq send("email-address")
