@@ -48,7 +48,7 @@
     {
       "request_method": "POST",
       "request_path": "/v1/users",
-      "request_body": "{\"data\":{\"type\":\"users\",\"attributes\":{\"name\":\"Sean Devine\",\"mobile-phone-number\":\"+18885551212\",\"email-address\":\"barelyknown@icloud.com\",\"password\":\"12345678\",\"physical-address\":\"123 Main St\\nAnytown, NY 12312 USA\"}}}",
+      "request_body": "{\"data\":{\"type\":\"users\",\"attributes\":{\"name\":\"Pedro Alvarado\",\"mobile-phone-number\":\"+18885551212\",\"email-address\":\"barelyknown@icloud.com\",\"password\":\"12345678\",\"physical-address\":\"123 Main St\\nAnytown, NY 12312 USA\"}}}",
       "request_headers": {
         "Content-Type": "application/vnd.api+json"
       },
@@ -57,7 +57,7 @@
       "request_content_type": "application/vnd.api+json",
       "response_status": 201,
       "response_status_text": "Created",
-      "response_body": "{\"data\":{\"id\":\"52\",\"type\":\"users\",\"links\":{\"self\":\"http://example.org/v1/users/52\"},\"attributes\":{\"name\":\"Sean Devine\",\"mobile-phone-number\":\"+18885551212\",\"email-address\":\"barelyknown@icloud.com\",\"physical-address\":\"123 Main St\\nAnytown, NY 12312 USA\"}}}",
+      "response_body": "{\"data\":{\"id\":\"58\",\"type\":\"users\",\"links\":{\"self\":\"http://example.org/v1/users/58\"},\"attributes\":{\"name\":\"Pedro Alvarado\",\"mobile-phone-number\":\"+18885551212\",\"email-address\":\"barelyknown@icloud.com\",\"physical-address\":\"123 Main St\\nAnytown, NY 12312 USA\"}}}",
       "response_headers": {
         "Content-Type": "application/vnd.api+json"
       },

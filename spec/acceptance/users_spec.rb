@@ -17,7 +17,7 @@ RSpec.resource "Users" do
     DESC
 
     let "name" do
-      "Sean Devine"
+      "Pedro Alvarado"
     end
 
     parameter "mobile-phone-number", <<-DESC, scope: :attributes, required: true
@@ -57,6 +57,20 @@ RSpec.resource "Users" do
       expect(status).to eq 201
       user = JSON.parse(response_body)
       expect(user["data"]["attributes"]["email-address"]).to eq send("email-address")
+    end
+  end
+
+  get "/v1/users/:id" do
+    let! :persisted_user do
+      FactoryGirl.create(:user)
+    end
+
+    let :id do
+      persisted_user.id.to_s
+    end
+
+    example_request "GET /v1/users/:id" do
+      expect(status).to eq 200
     end
   end
 end
