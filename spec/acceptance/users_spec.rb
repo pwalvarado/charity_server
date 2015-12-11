@@ -3,7 +3,7 @@ require "rspec_api_documentation_helper"
 RSpec.resource "Users" do
   header "Content-Type", "application/vnd.api+json"
 
-  post "/v1/users" do
+  shared_context "user parameters" do
     parameter "type", <<-DESC, required: true
       The type of the resource. Must be users.
     DESC
@@ -16,38 +16,40 @@ RSpec.resource "Users" do
       The name of the user.
     DESC
 
-    let "name" do
-      "Pedro Alvarado"
-    end
-
     parameter "mobile-phone-number", <<-DESC, scope: :attributes, required: true
       The mobile phone of the user.
     DESC
-
-    let "mobile-phone-number" do
-      "+18885551212"
-    end
 
     parameter "email-address", <<-DESC, scope: :attributes, required: true
       The email address of the user.
     DESC
 
-    let "email-address" do
-      "barelyknown@icloud.com"
-    end
-
     parameter "password", <<-DESC, scope: :attributes, required: true
       The password for the user.
     DESC
 
-    let "password" do
-      "12345678"
-    end
-
     parameter "physical-address", <<-DESC, scope: :attributes, required: true
       The physical address of the user.
     DESC
+  end
 
+  post "/v1/users" do
+    include_context "user parameters"
+    let "name" do
+      "Pedro Alvarado"
+    end
+
+    let "mobile-phone-number" do
+      "+18885551212"
+    end
+
+    let "email-address" do
+      "barelyknown@icloud.com"
+    end
+
+    let "password" do
+      "12345678"
+    end
     let "physical-address" do
       "123 Main St\nAnytown, NY 12312 USA"
     end
@@ -71,6 +73,37 @@ RSpec.resource "Users" do
 
     example_request "GET /v1/users/:id" do
       expect(status).to eq 200
+    end
+  end
+
+  patch "/v1/users/:user_id" do
+    let! :persisted_user do
+      FactoryGirl.create(:user)
+    end
+
+    let "user_id" do
+      persisted_user.id.to_s
+    end
+
+    include_context "user parameters"
+
+    parameter "id", <<-DESC, required:true
+      The id of the user.
+    DESC
+
+    let "id" do
+      persisted_user.id.to_s
+    end
+
+    let "name" do
+      "Marta Urrego"
+    end
+
+    example_request "PATCH /v1/users/:id" do
+      puts response_body
+      expect(status).to eq 200
+      user =  JSON.parse(response_body)
+      expect(user["data"]["attributes"]["name"]).to eq public_send("name")
     end
   end
 end
