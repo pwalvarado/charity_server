@@ -9,6 +9,11 @@
           "groups": "all"
         },
         {
+          "description": "PATCH /v1/users/:id",
+          "link": "users/patch_v1users:id.json",
+          "groups": "all"
+        },
+        {
           "description": "POST /v1/users",
           "link": "users/post_v1users.json",
           "groups": "all"

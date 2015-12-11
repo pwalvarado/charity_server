@@ -1,8 +1,8 @@
 {
   "resource": "Users",
-  "http_method": "POST",
-  "route": "/v1/users",
-  "description": "POST /v1/users",
+  "http_method": "PATCH",
+  "route": "/v1/users/:user_id",
+  "description": "PATCH /v1/users/:id",
   "explanation": null,
   "parameters": [
     {
@@ -39,6 +39,11 @@
       "required": true,
       "name": "physical-address",
       "description": "      The physical address of the user.\n"
+    },
+    {
+      "required": true,
+      "name": "id",
+      "description": "      The id of the user.\n"
     }
   ],
   "response_fields": [
@@ -46,18 +51,18 @@
   ],
   "requests": [
     {
-      "request_method": "POST",
-      "request_path": "/v1/users",
-      "request_body": "{\"data\":{\"type\":\"users\",\"attributes\":{\"name\":\"Pedro Alvarado\",\"mobile-phone-number\":\"+18885551212\",\"email-address\":\"barelyknown@icloud.com\",\"password\":\"12345678\",\"physical-address\":\"123 Main St\\nAnytown, NY 12312 USA\"}}}",
+      "request_method": "PATCH",
+      "request_path": "/v1/users/77",
+      "request_body": "{\"data\":{\"type\":\"users\",\"attributes\":{\"name\":\"Marta Urrego\"},\"id\":\"77\"}}",
       "request_headers": {
         "Content-Type": "application/vnd.api+json"
       },
       "request_query_parameters": {
       },
       "request_content_type": "application/vnd.api+json",
-      "response_status": 201,
-      "response_status_text": "Created",
-      "response_body": "{\"data\":{\"id\":\"78\",\"type\":\"users\",\"links\":{\"self\":\"http://example.org/v1/users/78\"},\"attributes\":{\"name\":\"Pedro Alvarado\",\"mobile-phone-number\":\"+18885551212\",\"email-address\":\"barelyknown@icloud.com\",\"physical-address\":\"123 Main St\\nAnytown, NY 12312 USA\"}}}",
+      "response_status": 200,
+      "response_status_text": "OK",
+      "response_body": "{\"data\":{\"id\":\"77\",\"type\":\"users\",\"links\":{\"self\":\"http://example.org/v1/users/77\"},\"attributes\":{\"name\":\"Marta Urrego\",\"mobile-phone-number\":\"MyString\",\"email-address\":\"MyString\",\"physical-address\":\"MyString\"}}}",
       "response_headers": {
         "Content-Type": "application/vnd.api+json"
       },
