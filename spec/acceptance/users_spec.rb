@@ -100,7 +100,7 @@ RSpec.resource "Users" do
     end
 
     example_request "PATCH /v1/users/:id" do
-      puts response_body
+      #puts response_body
       expect(status).to eq 200
       user =  JSON.parse(response_body)
       expect(user["data"]["attributes"]["name"]).to eq public_send("name")
