@@ -6,12 +6,14 @@ module V1
     attribute :physical_address
     attribute :password
 
-    # class << self
-    #   def creatable_fields(context)
-    #     [:name, :mobile_phone_number, :email_address, :physical_address, :password]
-    #   end
-    #   alias_method :updatable_fields, :creatable_fields
-    # end
+    has_many :memberships
+
+    class << self
+      def creatable_fields(context)
+        super - [:memberships]
+      end
+      alias_method :updatable_fields, :creatable_fields
+    end
 
     def fetchable_fields
       super - [:password]
