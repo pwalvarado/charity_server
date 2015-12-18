@@ -17,7 +17,7 @@ module V1
     end
 
     it "has the expected fetchable attributes" do
-      expect(subject.fetchable_fields.sort).to eq (creatable_fields + [:id, :created_at, :updated_at]).sort
+      expect(subject.fetchable_fields.sort).to eq (creatable_fields + [:id, :created_at, :updated_at, :memberships]).sort
     end
   end
 end
