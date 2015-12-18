@@ -1,3 +1,0 @@
-Charity App API Documentation
-=====================
-
