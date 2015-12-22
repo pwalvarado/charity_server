@@ -17,7 +17,6 @@ RSpec.describe Membership do
     it { is_expected.to validate_presence_of :user }
 
     it "validates that the user has not changed" do
-      byebug
       subject = FactoryGirl.create(:membership)
       subject.user = User.new
       subject.valid?
