@@ -66,7 +66,6 @@ RSpec.resource "Orgnizations" do
     end
 
     example_request "PATCH /v1/organizations/:id" do
-      puts response_body
       expect(status).to eq 200
       organization =  JSON.parse(response_body)
       expect(organization["data"]["attributes"]["name"]).to eq public_send("name")
