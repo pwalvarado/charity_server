@@ -1,7 +1,4 @@
 class Auction < ActiveRecord::Base
-
-  has_many :auction_admins
-
   has_many :donations
 
   belongs_to :organization
