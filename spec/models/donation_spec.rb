@@ -1,11 +1,12 @@
 RSpec.describe Donation do
   describe "Atrributes" do
     %w(
+      bid_type_id
+      auction_id
+      donor_id
+
       title
       description
-      auction_id
-      bid_type_id
-      donor_id
       redemption_window_starts_at
       redemption_window_ends_at
       estimated_value_amount
