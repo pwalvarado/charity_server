@@ -1,7 +1,14 @@
 module V1
   RSpec.describe AuctionResource do
     let :creatable_fields do
-      [:starts_at, :ends_at, :time_zone_id, :physical_address, :name, :donation_window_ends_at, :organization].sort
+      [:starts_at,
+       :ends_at,
+       :time_zone_id,
+       :physical_address,
+       :name,
+       :donation_window_ends_at,
+       :organization
+      ].sort
     end
 
     subject do
@@ -17,7 +24,8 @@ module V1
     end
 
     it "has the expected fetchable attributes" do
-      expect(subject.fetchable_fields.sort).to eq (creatable_fields + [:id, :created_at, :updated_at]).sort
+      expect(subject.fetchable_fields.sort).to eq (creatable_fields + [:id,
+       :created_at, :updated_at, :donations]).sort
     end
   end
 end
