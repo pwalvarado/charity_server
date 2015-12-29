@@ -78,7 +78,7 @@ RSpec.resource "DonationCategories" do
       DonationCategory.first.id.to_s
     end
 
-    example_request "GET /v1/donation-categories/:donation_category_id" do
+    example_request "GET /v1/donation-categories/:id" do
       expect(status).to eq 200
     end
   end

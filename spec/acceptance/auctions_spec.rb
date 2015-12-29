@@ -137,7 +137,7 @@ RSpec.resource "Auctions" do
   get "/v1/auctions/:auction_id" do
     include_context "persisted auction"
 
-    example_request "GET /v1/auctions/:auction_id" do
+    example_request "GET /v1/auctions/:id" do
       expect(status).to eq 200
     end
   end

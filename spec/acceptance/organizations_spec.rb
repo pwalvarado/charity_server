@@ -42,7 +42,7 @@ RSpec.resource "Orgnizations" do
   get "/v1/organizations/:organization_id" do
     include_context "with a persisted organization"
 
-    example_request "GET /v1/organizations/:organization_id" do
+    example_request "GET /v1/organizations/:id" do
       #puts response_body
       expect(status).to eq 200
     end
@@ -88,7 +88,7 @@ RSpec.resource "Orgnizations" do
 
   delete "/v1/organizations/:organization_id" do
     include_context "with a persisted organization"
-    example_request "DELETE /v1/organizations/:organization_id" do
+    example_request "DELETE /v1/organizations/:id" do
       expect(status).to eq 204
     end
   end
