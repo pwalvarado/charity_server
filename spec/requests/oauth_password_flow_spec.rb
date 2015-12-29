@@ -11,7 +11,7 @@ RSpec.describe "OAuth password flow" do
     FactoryGirl.create(:user, email_address: email_address, password: password)
   end
 
-  it "Creates a token and return it when the credentials are valid"do
+  it "Creates a token and return it when the credentials are valid" do
     post "/oauth/token", grant_type: "password", username: email_address, password: password
     expect(response.status).to eq 200
     expect(JSON.parse(response.body)["access_token"]).not_to be_nil
